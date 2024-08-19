@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 import { Link } from 'zbir/i18n/navigation';
+import LanguageSwitcher from 'zbir/components/LanguageSwitcher';
 
 /**
  * Defines the structure of the page navigation link that should be rendered by the
@@ -54,6 +55,8 @@ export const Header = () => (
                 {NAVIGATION_LINKS.map(link => (
                     <PageLink key={link.name} href={link.href} name={link.name} className="leading-6" />
                 ))}
+
+                <LanguageSwitcher />
             </div>
         </nav>
     </header>
@@ -83,6 +86,8 @@ export function Footer() {
                     {NAVIGATION_LINKS.map(link => (
                         <PageLink key={link.name} href={link.href} name={link.name} className="block" />
                     ))}
+
+
                 </nav>
             </div>
         </footer>

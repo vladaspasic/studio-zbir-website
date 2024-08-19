@@ -1,2 +1,8 @@
-export const LOCALES = ['sr', 'en'] as const;
-export const DEFAULT_LOCALE = 'sr';
+export const SERBIAN = 'sr';
+export const ENGLISH = 'en';
+export const LOCALES = [SERBIAN, ENGLISH] as const;
+export const DEFAULT_LOCALE = SERBIAN;
+export const LABELS = {
+    [SERBIAN]: 'Srpski',
+    [ENGLISH]: 'English',
+} as const;

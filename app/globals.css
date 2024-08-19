@@ -13,9 +13,9 @@ body > main {
     padding-block: 1rem;
 }
 
-body > footer,
 body > header {
     position: relative;
+    z-index: 2;
 }
 
 body > header::after {
