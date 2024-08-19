@@ -3,5 +3,15 @@
   "lead": {
     "title": "We bring visions to life.",
     "subtitle": "Architecture studio specializing in interior design and turnkey solutions."
+  },
+  "pages": {
+    "home": "Studio Zbir",
+    "projects": "Projects",
+    "about": "About us",
+    "contact": "Contact"
+  },
+  "footer": {
+    "copyright": "© {title}, {year}",
+    "location": "Belgrade, Serbia"
   }
 }

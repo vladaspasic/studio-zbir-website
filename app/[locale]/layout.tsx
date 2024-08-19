@@ -1,8 +1,8 @@
-import type {Metadata} from 'next';
-import Link from 'next/link';
+import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { Inter } from 'next/font/google';
+import Layout from 'zbir/components/Layout';
 import { LOCALES } from 'zbir/i18n/locales';
 import '../globals.css';
 
@@ -26,7 +26,7 @@ export function generateStaticParams() {
     return LOCALES.map((locale) => ({locale}));
 }
 
-export default async function LocaleLayout({children, params}: {
+export default async function LocaleLayout({ children, params }: {
     children: React.ReactNode;
     params: LocaleParams;
 }) {
@@ -38,20 +38,9 @@ export default async function LocaleLayout({children, params}: {
         <html lang={params.locale}>
             <body className={inter.className}>
                 <NextIntlClientProvider messages={messages}>
-                    <header className="container mx-auto my-4">
-                        <Link href={`/${params.locale}`}
-                              className="font-semibold leading-6 text-gray-800 hover:text-black transition-colors">
-                            Studio Zbir
-                        </Link>
-                    </header>
-
-                    <main className="container mx-auto">
+                    <Layout>
                         {children}
-                    </main>
-
-                    <footer>
-
-                    </footer>
+                    </Layout>
                 </NextIntlClientProvider>
             </body>
         </html>

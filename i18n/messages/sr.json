@@ -3,5 +3,15 @@
   "lead": {
     "title": "Oživljavamo vizije.",
     "subtitle": "Arhitektonski studio specijalizovan za dizajn enterijera i rešenja po sistemu ključ u ruke."
+  },
+  "pages": {
+    "home": "Studio Zbir",
+    "projects": "Projekti",
+    "about": "O nama",
+    "contact": "Kontakt"
+  },
+  "footer": {
+    "copyright": "© {title}, {year}",
+    "location": "Beograd, Srbija"
   }
 }
