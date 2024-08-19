@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
+import Hero from 'zbir/components/Hero';
 
 export default function About({ params }: { params: { locale: string } }) {
     unstable_setRequestLocale(params.locale);
@@ -8,9 +9,7 @@ export default function About({ params }: { params: { locale: string } }) {
 
     return (
         <div>
-            <h1 className="text-3xl font-bold laptop:text-6xl mb-5">
-                {t('pages.about')}
-            </h1>
+            <Hero title={t('pages.about')} />
         </div>
     );
 }
