@@ -38,7 +38,7 @@ export default async function LocaleLayout({ children, params }: {
           <NextIntlClientProvider messages={messages}>
               <header className="container mx-auto my-4">
                   <Link href={`/${params.locale}`} className="font-semibold leading-6 text-gray-800 hover:text-black transition-colors">
-                      {messages.title}
+                      Studio Zbir
                   </Link>
               </header>
 
