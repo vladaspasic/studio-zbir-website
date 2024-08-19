@@ -1,15 +1,25 @@
-import { useTranslations } from 'next-intl';
-import { unstable_setRequestLocale } from 'next-intl/server';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import { lookupProjects } from 'zbir/sanity/projects';
 import Hero from 'zbir/components/Hero';
+import ProjectGrid from 'zbir/components/ProjectGrid';
 
-export default function Home({ params }: { params: { locale: string } }) {
+export default async function Home({ params }: { params: { locale: string } }) {
     unstable_setRequestLocale(params.locale);
 
-    const t = useTranslations('lead');
+    const t = await getTranslations('lead');
+    const projects = await lookupProjects(params);
 
     return (
-        <div>
-            <Hero title={t('title')} subtitle={t('subtitle')} />
-        </div>
+        <>
+            <Hero title={t('title')} subtitle={t('subtitle')}/>
+
+            <article className="my-10 laptop:my-16">
+                <header className="mb-6">
+                    <p className="text-xl laptop:text-2xl font-semibold">Work</p>
+                </header>
+
+                <ProjectGrid projects={projects}/>
+            </article>
+        </>
     );
 }
