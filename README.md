@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Studio Zbir
 
-## Getting Started
+We are a full-service architecture studio specializing in interior design and turnkey solutions. We bring visions to life by seamlessly integrating creative design with practical implementation, ensuring that every project is not only aesthetically pleasing but also functionally sound.
 
-First, run the development server:
+### Our Expertise:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+* **Interior Design:**
+  Our studio crafts unique, personalized spaces that reflect our clients' tastes and needs. We focus on blending form with function, creating environments that are both beautiful and practical.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* **Contracting Services:**
+  Beyond design, we offer comprehensive contracting services to bring our designs to reality. As experienced contractors, we manage every aspect of the construction process, from material selection to final installation, ensuring high-quality execution on every project.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Our Approach:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+* **Holistic Process:**
+  We believe in a collaborative approach, working closely with our clients from concept to completion. Our process begins with understanding your vision and requirements, followed by meticulous planning and design, and finally, precise execution of the project.
 
-## Learn More
+* **Attention to Detail:**
+  Every project is treated with utmost care, paying attention to every detail, whether it’s the choice of materials, the layout, or the finishing touches. Our goal is to deliver spaces that exceed expectations.
 
-To learn more about Next.js, take a look at the following resources:
+* **Sustainability Focus:**
+  We are committed to sustainable practices, incorporating eco-friendly materials and energy-efficient solutions into our designs. Our aim is to create spaces that are not only beautiful but also environmentally responsible.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Why Choose Us?
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+* **End-to-End Solutions:**
+  From initial design concepts to final construction, we offer a seamless experience, handling all aspects of your project under one roof.
 
-## Deploy on Vercel
+* **Experienced Team:**
+  Our team comprises experienced architects, designers, and contractors who are passionate about creating exceptional spaces.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* **Client-Centric Approach:**
+  We prioritize our clients' needs, ensuring that their vision is at the heart of every project. We believe that the best results come from a true partnership between the client and our team.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+At Studio Zbir, we turn dreams into reality, crafting spaces that inspire and endure. Whether you're looking to redesign a single room or transform an entire property, we are here to make it happen.
