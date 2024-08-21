@@ -9,8 +9,8 @@ interface PageParams {
     locale: string,
 }
 
-export async function generateStaticParams() {
-    const projects = await lookupProjects({});
+export async function generateStaticParams({ params }: { params: { locale: string } }) {
+    const projects = await lookupProjects(params);
 
     return projects.map(project => ({
         slug: project.slug,
