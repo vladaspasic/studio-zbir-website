@@ -2,24 +2,21 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { lookupProjects } from 'zbir/sanity/projects';
 import Hero from 'zbir/components/Hero';
 import ProjectGrid from 'zbir/components/ProjectGrid';
+import Section from 'zbir/components/Section';
 
 export default async function Home({ params }: { params: { locale: string } }) {
     unstable_setRequestLocale(params.locale);
 
-    const t = await getTranslations('lead');
+    const t = await getTranslations();
     const projects = await lookupProjects(params);
 
     return (
         <>
-            <Hero title={t('title')} subtitle={t('subtitle')}/>
+            <Hero title={t('lead.title')} subtitle={t('lead.subtitle')}/>
 
-            <article className="my-10 laptop:my-16">
-                <header className="mb-6">
-                    <p className="text-xl laptop:text-2xl font-semibold">Work</p>
-                </header>
-
+            <Section title={t('projects.works')}>
                 <ProjectGrid projects={projects}/>
-            </article>
+            </Section>
         </>
     );
 }

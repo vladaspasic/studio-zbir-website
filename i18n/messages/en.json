@@ -10,6 +10,9 @@
     "about": "About us",
     "contact": "Contact"
   },
+  "projects": {
+    "works": "Our work"
+  },
   "footer": {
     "copyright": "© {title}, {year}",
     "location": "Belgrade, Serbia"
