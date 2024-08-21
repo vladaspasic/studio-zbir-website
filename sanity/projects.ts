@@ -1,11 +1,13 @@
 import type { PortableTextBlock } from '@portabletext/types'
 import type { SanityDocument, SanityImageAssetDocument } from 'next-sanity';
-import type { LanguageQuery, GroqQuery, SlugQuery } from './query';
+import type { LimitQuery, GroqQuery, SlugQuery } from './query';
 
 import { groq } from 'next-sanity';
 import { fetch, imageUrlFor } from 'zbir/sanity/api';
 import { DEFAULT_LOCALE } from 'zbir/i18n/locales';
 import { extractTranslation } from './utils';
+
+const DEFAULT_LIMIT = 1000;
 
 export interface Project {
     id: string,
@@ -17,9 +19,10 @@ export interface Project {
     gallery: string[],
 }
 
-export async function lookupProjects({ locale = DEFAULT_LOCALE }: LanguageQuery): Promise<Project[]> {
+export async function lookupProjects({ limit = DEFAULT_LIMIT, locale = DEFAULT_LOCALE }: LimitQuery): Promise<Project[]> {
     return queryProjects({
-        query: groq`*[_type == "project"] | order(date desc) {_id, name, slug, date, description, previewImage, gallery}`,
+        query: groq`*[_type == "project"] | order(date desc) {_id, name, slug, date, description, previewImage, gallery} [0...$limit]`,
+        params: { limit },
         locale,
     });
 }

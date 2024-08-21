@@ -11,7 +11,8 @@
     "contact": "Contact"
   },
   "projects": {
-    "works": "Our work"
+    "works": "Our work",
+    "see-more": "See more"
   },
   "sections": {
     "intro": "At Studio Zbir, we turn dreams into reality, crafting spaces that inspire, energize, and endure. Whether you are looking to redesign a single room or transform an entire property, we are here to make it happen with creativity, precision, and positive energy.",
@@ -28,7 +29,11 @@
       "name": "Your name",
       "email": "Your email address",
       "message": "How can we help you?",
-      "submit": "Send message"
+      "submit": "Send message",
+      "success": {
+        "title": "Thank you for reaching out to us!",
+        "message": "<paragraph>We’ve received your message and will get back to you shortly. We are excited to connect and discuss how we can bring your vision to life.</paragraph><paragraph>In the meantime, feel free to explore our portfolio or follow us on social media for the latest updates and inspiration.</paragraph>"
+      }
     }
   },
   "footer": {

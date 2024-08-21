@@ -4,6 +4,10 @@ export interface LanguageQuery {
     locale: string,
 }
 
+export interface LimitQuery extends LanguageQuery {
+    limit?: number,
+}
+
 export interface SlugQuery extends LanguageQuery {
     slug: string,
 }
