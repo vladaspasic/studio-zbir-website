@@ -1,3 +1,5 @@
+import type { IconType } from 'react-icons';
+
 import classnames from 'classnames';
 import { useTranslations } from 'next-intl';
 import { LuInstagram, LuFacebook, LuLinkedin, LuMail, LuTwitter } from 'react-icons/lu';
@@ -5,20 +7,21 @@ import { Link } from 'zbir/i18n/navigation';
 import LanguageSwitcher from 'zbir/components/LanguageSwitcher';
 import styles from './Layout.module.css';
 
-/**
- * Defines the structure of the page navigation link that should be rendered by the
- * header and footer navigation components.
- */
 interface NavigationLink {
     href: string,
     name: string,
+}
+
+interface SocialLink {
+    href: string,
+    Icon: IconType,
 }
 
 interface PageLinkProps extends NavigationLink {
     className?: string,
 }
 
-const SOCIAL_LINKS = [{
+const SOCIAL_LINKS: SocialLink[] = [{
     href: '#',
     Icon: LuInstagram,
 }, {
@@ -55,6 +58,16 @@ function PageLink({ href, name, className }: PageLinkProps) {
               className={classnames('block font-semibold text-gray-700 hover:text-black transition', className)}>
             {label}
         </Link>
+    );
+}
+
+function SocialLink({ href, Icon }: SocialLink) {
+    return (
+        <a href={href}
+           className="flex items-center justify-center rounded-full p-4 text-gray-500 hover:text-gray-800 hover:bg-gray-200 transition ease-in-out duration-200"
+        >
+            <Icon size="1.25rem" />
+        </a>
     );
 }
 
@@ -122,15 +135,7 @@ export function Footer() {
             <div className="container mx-auto my-6 flex items-center justify-center">
                 <div className="grid grid-cols-5 gap-4 tablet:gap-6">
                     {SOCIAL_LINKS.map(link => (
-                        <a href="#"
-                           key={link.Icon.name}
-                           className="flex items-center justify-center rounded-full p-4 hover:bg-gray-200 transition ease-in-out duration-200"
-                        >
-                            <link.Icon
-                                size="1.25rem"
-                                className="text-gray-500 hover:text-gray-900 transition ease-in-out duration-200"
-                            />
-                        </a>
+                        <SocialLink key={link.Icon.name} href={link.href} Icon={link.Icon} />
                     ))}
                 </div>
             </div>
