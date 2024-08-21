@@ -1,22 +1,11 @@
 import type { PortableTextBlock } from '@portabletext/types'
-import type { SanityDocument, SanityImageAssetDocument, QueryParams } from 'next-sanity';
+import type { SanityDocument, SanityImageAssetDocument } from 'next-sanity';
+import type { LanguageQuery, GroqQuery, SlugQuery } from './query';
 
 import { groq } from 'next-sanity';
 import { fetch, imageUrlFor } from 'zbir/sanity/api';
 import { DEFAULT_LOCALE } from 'zbir/i18n/locales';
-
-interface LanguageQuery {
-    locale?: string,
-}
-
-interface SlugQuery extends LanguageQuery {
-    slug: string,
-}
-
-interface GroqQuery extends LanguageQuery {
-    query: string,
-    params?: QueryParams,
-}
+import { extractTranslation } from './utils';
 
 export interface Project {
     id: string,
@@ -26,20 +15,6 @@ export interface Project {
     description: PortableTextBlock[] | null,
     previewImage: string,
     gallery: string[],
-}
-
-function extractTranslationFromFields<T>(fields: any[], language?: string): T | null {
-    if (!fields || fields.length === 0) {
-        return null;
-    }
-
-    let field = fields.find(it => it._key === language);
-
-    if (field === undefined) {
-        field = fields[0];
-    }
-
-    return field ? field.value : null;
 }
 
 export async function lookupProjects({ locale = DEFAULT_LOCALE }: LanguageQuery): Promise<Project[]> {
@@ -69,7 +44,7 @@ export async function queryProjects({ query, params, locale = DEFAULT_LOCALE }: 
         slug: document.slug.current,
         name: document.name,
         date: new Date(document.date),
-        description: extractTranslationFromFields(document.description, locale),
+        description: extractTranslation(document.description, locale),
         previewImage: imageUrlFor(document.previewImage)
             .width(840)
             .height(720)

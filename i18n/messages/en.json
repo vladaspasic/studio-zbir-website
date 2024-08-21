@@ -13,6 +13,11 @@
   "projects": {
     "works": "Our work"
   },
+  "sections": {
+    "intro": "At Studio Zbir, we turn dreams into reality, crafting spaces that inspire, energize, and endure. Whether you are looking to redesign a single room or transform an entire property, we are here to make it happen with creativity, precision, and positive energy.",
+    "approaches": "Our approach",
+    "services": "Services"
+  },
   "footer": {
     "copyright": "© {title}, {year}",
     "location": "Belgrade, Serbia"

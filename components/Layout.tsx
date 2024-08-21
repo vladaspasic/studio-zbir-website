@@ -72,8 +72,8 @@ function SocialLink({ href, Icon }: SocialLink) {
 }
 
 export const Header = () => (
-    <header className="w-full z-30 top-0 p-4">
-        <nav className="w-full container mx-auto flex flex-wrap items-center justify-between">
+    <header className="w-full">
+        <nav className="container mx-auto flex flex-wrap items-center justify-between p-4">
             <div className="flex lg:flex-1 justify-start -ml-2">
                 <PageLink href="/" name="home" className="text-xl leading-6 p-2"/>
             </div>
@@ -111,8 +111,8 @@ export function Footer() {
     const copyright = t('footer.copyright', {title, year: new Date().getFullYear()});
 
     return (
-        <footer className="p-4">
-            <div className="container grid tablet:grid-cols-3 gap-4 mx-auto">
+        <footer className="w-full">
+            <div className="container grid tablet:grid-cols-3 gap-4 p-4 mx-auto">
                 <div className="tablet:col-span-2">
                     <p className="text-2xl font-light mb-2">
                         {title}
