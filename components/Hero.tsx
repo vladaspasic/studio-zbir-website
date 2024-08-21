@@ -10,7 +10,7 @@ export default function Hero({ title, subtitle, children }: HeroProps) {
     return (
         <div className="my-14 laptop:my-20 desktop:my-28">
             {title && (
-                <p className="text-3xl leading-loose font-semibold laptop:text-6xl mb-2 tablet:mb-6">
+                <p className="text-3xl font-semibold laptop:text-6xl mb-3 tablet:mb-6">
                     {title}
                 </p>
             )}

@@ -20,11 +20,11 @@ function ProjectCard({ project }: { project: Project }) {
                    className="block w-full rounded duration-200 hover:scale-[1.02] hover:shadow-xl"
             />
 
-            <div className="pt-3 flex items-center justify-between">
-                <p className="text-gray-700 m-0 text-xl laptop:text-2xl">
+            <div className="pt-2 flex items-center justify-between">
+                <p className="text-gray-900 m-0 text-xl">
                     {project.name}
                 </p>
-                <p className="text-gray-900 m-0">
+                <p className="text-gray-700 m-0">
                     {date}
                 </p>
             </div>

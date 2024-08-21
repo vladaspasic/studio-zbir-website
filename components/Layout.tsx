@@ -18,6 +18,23 @@ interface PageLinkProps extends NavigationLink {
     className?: string,
 }
 
+const SOCIAL_LINKS = [{
+    href: '#',
+    Icon: LuInstagram,
+}, {
+    href: '#',
+    Icon: LuFacebook,
+}, {
+    href: '#',
+    Icon: LuLinkedin,
+}, {
+    href: '#',
+    Icon: LuTwitter,
+}, {
+    href: '#',
+    Icon: LuMail,
+}];
+
 const NAVIGATION_LINKS: NavigationLink[] = [{
     href: '/projects',
     name: 'projects',
@@ -65,7 +82,7 @@ export const Header = () => (
                         </li>
                     ))}
 
-                    <li>
+                    <li className="px-1 py-2 tablet:px-4">
                         <LanguageSwitcher/>
                     </li>
                 </ul>
@@ -104,31 +121,17 @@ export function Footer() {
 
             <div className="container mx-auto my-6 flex items-center justify-center">
                 <div className="grid grid-cols-5 gap-4 tablet:gap-6">
-                    <a href="#"
-                       className="flex items-center justify-center rounded-full p-4 hover:bg-gray-200 transition ease-in-out duration-200">
-                        <LuInstagram size="1.25rem"
-                                     className="text-gray-500 hover:text-gray-900 transition ease-in-out duration-200"/>
-                    </a>
-                    <a href="#"
-                       className="flex items-center justify-center rounded-full p-4 hover:bg-gray-200 transition ease-in-out duration-200">
-                        <LuFacebook size="1.25rem"
-                                    className="text-gray-500 hover:text-gray-900 transition ease-in-out duration-200"/>
-                    </a>
-                    <a href="#"
-                       className="flex items-center justify-center rounded-full p-4 hover:bg-gray-200 transition ease-in-out duration-200">
-                        <LuTwitter size="1.25rem"
-                                   className="text-gray-500 hover:text-gray-900 transition ease-in-out duration-200"/>
-                    </a>
-                    <a href="#"
-                       className="flex items-center justify-center rounded-full p-4 hover:bg-gray-200 transition ease-in-out duration-200">
-                        <LuLinkedin size="1.25rem"
-                                    className="text-gray-500 hover:text-gray-900 transition ease-in-out duration-200"/>
-                    </a>
-                    <a href="#"
-                       className="flex items-center justify-center rounded-full p-4 hover:bg-gray-200 transition ease-in-out duration-200">
-                        <LuMail size="1.25rem"
-                                className="text-gray-500 hover:text-gray-900 transition ease-in-out duration-200"/>
-                    </a>
+                    {SOCIAL_LINKS.map(link => (
+                        <a href="#"
+                           key={link.Icon.name}
+                           className="flex items-center justify-center rounded-full p-4 hover:bg-gray-200 transition ease-in-out duration-200"
+                        >
+                            <link.Icon
+                                size="1.25rem"
+                                className="text-gray-500 hover:text-gray-900 transition ease-in-out duration-200"
+                            />
+                        </a>
+                    ))}
                 </div>
             </div>
 

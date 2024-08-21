@@ -1,27 +1,37 @@
 "use client"
 
-import { useState, ReactNode } from 'react';
+import { useState, ReactNode, MouseEventHandler } from 'react';
+import classnames from 'classnames';
 
 export interface DropdownProps {
     label: string,
+    className?: string,
     children: ReactNode,
 }
 
-export default function Dropdown({ label, children }: DropdownProps) {
+export default function Dropdown({ label, className, children }: DropdownProps) {
     const [opened, setState] = useState(() => false);
-    const toggle = () => setState(!opened);
+
+    const toggle: MouseEventHandler = (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        setState(!opened);
+    };
 
     return (
-        <div className="inline-flex bg-white border rounded-md">
-            <span className="px-4 py-2 text-sm text-gray-600 hover:text-gray-700 bg-white hover:bg-gray-50 rounded-l-md">
+        <div className={classnames('inline-flex bg-white border rounded border-gray-400', className)}>
+            <button type="button"
+                    onClick={e => toggle(e)}
+                    className="px-4 py-2 text-sm text-gray-700 flex-1 rounded-l">
                 {label}
-            </span>
+            </button>
 
             <div className="relative">
                 <button
                     type="button"
-                    onClick={() => toggle()}
-                    className="inline-flex items-center justify-center h-full px-2 bg-white text-gray-600 border-l border-gray-100 hover:text-gray-700 rounded-r-md hover:bg-gray-50"
+                    onClick={(e) => toggle(e)}
+                    className="inline-flex items-center justify-center h-full px-2 duration-200 text-gray-700 hover:text-black border-l border-gray-400 rounded-r hover:bg-gray-100"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +49,7 @@ export default function Dropdown({ label, children }: DropdownProps) {
                     </svg>
                 </button>
 
-                <div className={`${opened ? 'absolute' : 'hidden'} right-0 z-10 w-56 mt-4 origin-top-right bg-white border border-gray-100 rounded-md shadow-lg`}>
+                <div className={`${opened ? 'absolute' : 'hidden'} right-0 z-50 w-56 mt-4 origin-top-right bg-white border border-gray-100 rounded shadow-lg`}>
                     <div className="p-2">
                         {children}
                     </div>
