@@ -11,7 +11,8 @@
     "contact": "Kontakt"
   },
   "projects": {
-    "works": "Projekti"
+    "works": "Projekti",
+    "see-more": "Pogledaj sve projekte"
   },
   "sections": {
     "intro": "U Studiju Zbir pretvaramo vaše snove u stvarnost, stvarajući prostore koji inspirišu, energiziraju, i traju. Bilo da želite da redizajnirate jednu sobu ili transformišete ceo dom, mi smo tu da to ostvarimo kreativnošću, preciznošću i pozitivnom energijom.",
@@ -28,7 +29,11 @@
       "name": "Vaše ime",
       "email": "Vaša email adresa",
       "message": "Kako možemo da vam pomognemo?",
-      "submit": "Pošalji poruku"
+      "submit": "Pošalji poruku",
+      "success": {
+        "title": "Hvala što ste nam se obratili!",
+        "message": "<paragraph>Primili smo vašu poruku i javićemo vam se uskoro. Uzbuđeni smo što ćemo se povezati i razgovarati o tome kako možemo da oživimo vašu viziju.</paragraph><paragraph>U međuvremenu, slobodno istražite naš portfolio ili pratite nas na društvenim medijima za najnovija ažuriranja i inspiraciju.<paragraph>"
+      }
     }
   },
   "footer": {

@@ -1,17 +1,21 @@
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import { LuInspect } from 'react-icons/lu';
 import { lookupProjects } from 'zbir/sanity/projects';
 import { lookupSections } from 'zbir/sanity/sections';
+import { Link } from 'zbir/components/Button';
 import Hero from 'zbir/components/Hero';
 import Approach from 'zbir/components/Approach';
 import ProjectGrid from 'zbir/components/ProjectGrid';
 import Section from 'zbir/components/Section';
 import Service from 'zbir/components/Service';
 
+const LIMIT = 6;
+
 export default async function Home({ params }: { params: { locale: string } }) {
     unstable_setRequestLocale(params.locale);
 
     const t = await getTranslations();
-    const projects = await lookupProjects(params);
+    const projects = await lookupProjects({ locale: params.locale, limit: LIMIT });
     const sections = await lookupSections(params);
 
     const approaches = sections.filter(it => it.type === 'approach');
@@ -23,6 +27,17 @@ export default async function Home({ params }: { params: { locale: string } }) {
 
             <Section title={t('projects.works')}>
                 <ProjectGrid projects={projects}/>
+
+                {projects.length == LIMIT && (
+                    <footer className="text-center my-8">
+                        <Link href="/projects">
+                        <span className="mr-2">
+                            {t('projects.see-more')}
+                        </span>
+                            <LuInspect size="1.25rem"/>
+                        </Link>
+                    </footer>
+                )}
             </Section>
 
             <Section>
