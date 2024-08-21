@@ -8,17 +8,18 @@ import { useForm } from '@formspree/react';
 import Button from 'zbir/components/Button';
 
 export type FormControlProps<T> = {
-    input: ComponentType<HTMLAttributes<T>>,
+    input: ComponentType<{ placeholder: string } & HTMLAttributes<T>>,
     label: string,
 } & InputHTMLAttributes<HTMLInputElement> & TextareaHTMLAttributes<HTMLTextAreaElement>;
 
 function FormControl({ input: Input, label, className, ...props }: FormControlProps<HTMLElement>) {
-    const id = 'form-control-' + useId();
+    const id = 'form-control-' + useId() + '-' + props.name;
 
     return (
         <div className={classnames('relative z-0', className)}>
             <Input {...props}
                    id={id}
+                   placeholder=" "
                    className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-black focus:outline-none focus:ring-0"
             />
             <label htmlFor={id}
