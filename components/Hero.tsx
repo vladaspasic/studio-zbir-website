@@ -8,15 +8,15 @@ interface HeroProps {
 
 export default function Hero({ title, subtitle, children }: HeroProps) {
     return (
-        <div className="my-10 laptop:my-20">
+        <div className="my-14 laptop:my-20 desktop:my-28">
             {title && (
-                <p className="text-3xl font-bold laptop:text-6xl mb-5">
+                <p className="text-3xl leading-loose font-semibold laptop:text-6xl mb-2 tablet:mb-6">
                     {title}
                 </p>
             )}
 
             {subtitle && (
-                <p className="text-xl font-semibold laptop:text-3xl">
+                <p className="text-xl laptop:text-3xl">
                     {subtitle}
                 </p>
             )}
