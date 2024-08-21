@@ -111,8 +111,8 @@ export function Footer() {
     const copyright = t('footer.copyright', {title, year: new Date().getFullYear()});
 
     return (
-        <footer className="w-full">
-            <div className="container grid tablet:grid-cols-3 gap-4 p-4 mx-auto">
+        <footer className="w-full pt-6 border-t">
+            <div className="container grid tablet:grid-cols-3 gap-4 px-4 mx-auto">
                 <div className="tablet:col-span-2">
                     <p className="text-2xl font-light mb-2">
                         {title}
@@ -140,7 +140,7 @@ export function Footer() {
                 </div>
             </div>
 
-            <p className="text-sm font-light text-center">
+            <p className="text-sm font-light text-center border-t py-4">
                 {copyright}
             </p>
         </footer>
