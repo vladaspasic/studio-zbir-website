@@ -18,6 +18,19 @@
     "approaches": "Naš pristup",
     "services": "Usluge"
   },
+  "contact": {
+    "subtitle": "Verujemo u moć saradnje. Podelite svoje ideje, vizije ili brige sa nama i hajde da istražimo kako možemo da oživimo vaš prostor iz snova.",
+    "cta": "Voleli bismo da vas čujemo! Bilo da ste spremni da započnete svoj sledeći projekat, imate pitanje o našim uslugama ili jednostavno želite da saznate više o tome šta radimo, naš tim je tu da vam pomogne.",
+    "social": {
+      "lead": "Pratite nas na društvenim mrežama da biste videli naše najnovije projekte, savete za dizajn ili novosti:"
+    },
+    "form": {
+      "name": "Vaše ime",
+      "email": "Vaša email adresa",
+      "message": "Kako možemo da vam pomognemo?",
+      "submit": "Pošalji poruku"
+    }
+  },
   "footer": {
     "copyright": "© {title}, {year}",
     "location": "Beograd, Srbija"

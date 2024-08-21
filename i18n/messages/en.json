@@ -18,6 +18,19 @@
     "approaches": "Our approach",
     "services": "Services"
   },
+  "contact": {
+    "subtitle": "We believe in the power of collaboration. Share your ideas, visions, or concerns with us, and let’s explore how we can bring your dream space to life.",
+    "cta": "We’d love to hear from you! Whether you’re ready to start your next project, have a question about our services, or simply want to learn more about what we do, our team is here to help.",
+    "social": {
+      "lead": "Stay connected with us on social media to see our latest projects, design tips, and updates:"
+    },
+    "form": {
+      "name": "Your name",
+      "email": "Your email address",
+      "message": "How can we help you?",
+      "submit": "Send message"
+    }
+  },
   "footer": {
     "copyright": "© {title}, {year}",
     "location": "Belgrade, Serbia"

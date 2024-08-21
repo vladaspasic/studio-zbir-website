@@ -2,7 +2,7 @@ import type { IconType } from 'react-icons';
 
 import classnames from 'classnames';
 import { useTranslations } from 'next-intl';
-import { LuInstagram, LuFacebook, LuLinkedin, LuMail, LuTwitter } from 'react-icons/lu';
+import { LuInstagram, LuFacebook, LuLinkedin, LuTwitter } from 'react-icons/lu';
 import { Link } from 'zbir/i18n/navigation';
 import LanguageSwitcher from 'zbir/components/LanguageSwitcher';
 import styles from './Layout.module.css';
@@ -33,9 +33,6 @@ const SOCIAL_LINKS: SocialLink[] = [{
 }, {
     href: '#',
     Icon: LuTwitter,
-}, {
-    href: '#',
-    Icon: LuMail,
 }];
 
 const NAVIGATION_LINKS: NavigationLink[] = [{
@@ -71,11 +68,23 @@ function SocialLink({ href, Icon }: SocialLink) {
     );
 }
 
+export function SocialLinks({ className }: { className?: string }) {
+    return (
+        <div className={classnames('flex items-center justify-center', className)}>
+            <div className="grid grid-cols-4 gap-4 tablet:gap-6">
+                {SOCIAL_LINKS.map(link => (
+                    <SocialLink key={link.Icon.name} href={link.href} Icon={link.Icon}/>
+                ))}
+            </div>
+        </div>
+    );
+}
+
 export const Header = () => (
     <header className="w-full">
-        <nav className="container mx-auto flex flex-wrap items-center justify-between p-4">
+    <nav className="container mx-auto flex flex-wrap items-center justify-between p-4">
             <div className="flex lg:flex-1 justify-start -ml-2">
-                <PageLink href="/" name="home" className="text-xl leading-6 p-2"/>
+            <PageLink href="/" name="home" className="text-xl leading-6 p-2"/>
             </div>
 
             <label htmlFor="menu-toggle" className="cursor-pointer block p-2 -mr-2 tablet:hidden">
@@ -132,13 +141,7 @@ export function Footer() {
                 </nav>
             </div>
 
-            <div className="container mx-auto my-6 flex items-center justify-center">
-                <div className="grid grid-cols-5 gap-4 tablet:gap-6">
-                    {SOCIAL_LINKS.map(link => (
-                        <SocialLink key={link.Icon.name} href={link.href} Icon={link.Icon} />
-                    ))}
-                </div>
-            </div>
+            <SocialLinks className="container mx-auto my-6" />
 
             <p className="text-sm font-light text-center border-t py-4">
                 {copyright}
