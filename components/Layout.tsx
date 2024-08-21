@@ -14,6 +14,7 @@ interface NavigationLink {
 
 interface SocialLink {
     href: string,
+    label: string,
     Icon: IconType,
 }
 
@@ -23,15 +24,19 @@ interface PageLinkProps extends NavigationLink {
 
 const SOCIAL_LINKS: SocialLink[] = [{
     href: '#',
+    label: 'Instagram',
     Icon: LuInstagram,
 }, {
     href: '#',
+    label: 'Facebook',
     Icon: LuFacebook,
 }, {
     href: '#',
+    label: 'Linkedin',
     Icon: LuLinkedin,
 }, {
     href: '#',
+    label: 'Twitter',
     Icon: LuTwitter,
 }];
 
@@ -58,10 +63,11 @@ function PageLink({ href, name, className }: PageLinkProps) {
     );
 }
 
-function SocialLink({ href, Icon }: SocialLink) {
+function SocialLink({ href, label, Icon }: SocialLink) {
     return (
         <a href={href}
            className="flex items-center justify-center rounded-full p-4 text-gray-500 hover:text-gray-800 hover:bg-gray-200 transition ease-in-out duration-200"
+           aria-label={label}
         >
             <Icon size="1.25rem" />
         </a>
@@ -73,7 +79,12 @@ export function SocialLinks({ className }: { className?: string }) {
         <div className={classnames('flex items-center justify-center', className)}>
             <div className="grid grid-cols-4 gap-4 tablet:gap-6">
                 {SOCIAL_LINKS.map(link => (
-                    <SocialLink key={link.Icon.name} href={link.href} Icon={link.Icon}/>
+                    <SocialLink
+                        key={link.label}
+                        href={link.href}
+                        label={link.label}
+                        Icon={link.Icon}
+                    />
                 ))}
             </div>
         </div>

@@ -13,7 +13,7 @@ export type FormControlProps<T> = {
 } & InputHTMLAttributes<HTMLInputElement> & TextareaHTMLAttributes<HTMLTextAreaElement>;
 
 function FormControl({ input: Input, label, className, ...props }: FormControlProps<HTMLElement>) {
-    const id = useId();
+    const id = 'form-control-' + useId();
 
     return (
         <div className={classnames('relative z-0', className)}>

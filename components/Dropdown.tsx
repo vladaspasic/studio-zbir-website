@@ -33,6 +33,7 @@ export default function Dropdown({ label, className, children }: DropdownProps) 
                     onClick={(e) => toggle(e)}
                     className="inline-flex items-center justify-center h-full px-2 duration-200 text-gray-700 hover:text-black border-l border-gray-400 rounded-r hover:bg-gray-100"
                 >
+                    <span className="sr-only">{label}</span>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="w-4 h-4"
