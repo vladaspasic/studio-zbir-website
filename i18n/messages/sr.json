@@ -13,6 +13,11 @@
   "projects": {
     "works": "Projekti"
   },
+  "sections": {
+    "intro": "U Studiju Zbir pretvaramo vaše snove u stvarnost, stvarajući prostore koji inspirišu, energiziraju, i traju. Bilo da želite da redizajnirate jednu sobu ili transformišete ceo dom, mi smo tu da to ostvarimo kreativnošću, preciznošću i pozitivnom energijom.",
+    "approaches": "Naš pristup",
+    "services": "Usluge"
+  },
   "footer": {
     "copyright": "© {title}, {year}",
     "location": "Beograd, Srbija"
